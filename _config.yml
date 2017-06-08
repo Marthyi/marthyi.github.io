@@ -2,7 +2,6 @@ title: Marthyi.GitHub.io
 show_downloads: false
 theme: jekyll-theme-cayman
 
-markdown: redcarpet
 extensions: [fenced_code_blocks]
 
 gems: jekyll-mentions
