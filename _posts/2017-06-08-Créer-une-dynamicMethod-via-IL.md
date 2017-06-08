@@ -1,5 +1,5 @@
 # Code généric
-{% highlight csharp %}
+```csharp
 public static T CreateDelegate<T>(this DynamicMethod dynamicMethod) where T : class => dynamicMethod.CreateDelegate(typeof(T)) as T;
 
 public static T CreateDynamicMethod<T>(string methodName, Action<ILGenerator> generator) where T : class
@@ -14,10 +14,10 @@ public static T CreateDynamicMethod<T>(string methodName, Action<ILGenerator> ge
 
             return dynamicMethod.CreateDelegate<T>();
         }
-{% endhighlight %}
+```
 
 # Utilisation
-{% highlight csharp %}
+```csharp
  Action method = CreateDynamicMethod<Action>("HelloWorldMethod",
                     iLGenerator =>
                     {
@@ -26,4 +26,4 @@ public static T CreateDynamicMethod<T>(string methodName, Action<ILGenerator> ge
                     });
                     
  method(); // display on console "Hello World !"
-{% endhighlight %}
+```
