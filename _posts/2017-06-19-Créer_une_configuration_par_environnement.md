@@ -1,9 +1,11 @@
 Voici un exemple d'environnement de build
+
 ![Image configuration de solution](https://github.com/Marthyi/marthyi.github.io/raw/master/images/build_button.png)
 
 Ces différents environnement permettent de déployer ou bien de débugger du code tout en étant dans des environnement différents.
 
 Dans le cadre d'une application Web, voici à quoi le web.config associé:
+
 ![Image web.config](https://github.com/Marthyi/marthyi.github.io/raw/master/images/web_config.png)
 
 # 1 Transformation Xml
