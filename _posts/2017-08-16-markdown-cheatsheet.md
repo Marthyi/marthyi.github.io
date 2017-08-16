@@ -3,7 +3,11 @@
 Faire une ligne avec un saut à la ligne  
 => mettre deux espaces à la fin  
 
-**Texte en gras**  
+|Texte|Markdown|  
+|-----------------|-----------------|
+|**Texte en gras**|\*\*Texte en gras**|  
+|*Texte en italic*|\*Texte en italic*|  
+
 *Texte en italique*
 
 Caratè au sens html &amp; => \&amp;
