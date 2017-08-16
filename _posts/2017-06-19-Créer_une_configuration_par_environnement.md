@@ -19,7 +19,8 @@ En bas de votre csproj, décommentez la Target BeforeBuild comme ceci:
 ```
 
 # 2 Définir l'environnement associé à chaque build
-Pour chaque configuration de solution ajoutez une variable nommée à votre goût (ici ApplicationEnvironment)
+Pour une configuration 1:1 avec les configuration de build de Visual studio il est possible d'utiliser directement la variable *$(Configuration)*,  
+ sinon pour chaque configuration de la solution il sera nécessaire d'ajouter une variable nommée à votre goût (ici *ApplicationEnvironment*).
 ```xml
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Dev-Debug|AnyCPU'">
     <DebugSymbols>true</DebugSymbols>
