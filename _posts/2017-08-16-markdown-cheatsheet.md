@@ -1,51 +1,72 @@
 ﻿# How To Markdown
 
-Faire une ligne avec un saut à la ligne  
-=> mettre deux espaces à la fin  
+\* Afin de forcer un saut à ligne il faut mettre deux espaces en fin de ligne
+> lorem ipsum dolor sit amet,··  
+consectetur adipiscing eli...
 
-|Texte|Markdown|  
+|Texte|Markdown|
 |-----------------|-----------------|
 |**Texte en gras**|\*\*Texte en gras**|  
 |*Texte en italic*|\*Texte en italic*|  
-
-*Texte en italique*
-
-Caratè au sens html &amp; => \&amp;
-
-# Title 1
-## Title 2
-### Title 3 
-####  Title 4
-#####  Title 5
-######  Title 6
-
-
+|Caractère spécial|Caract\&egrave;re sp\&eacute;cial|
+|<h1>Titre 1</h1> |# Title 1|
+|<h2>Titre 2</h2>|## Title 2|
+|<h3>Titre 3</h3>|### Title 3 |
+|<h4>Titre 4</h4>|####  Title 4|
+|<h5>Titre 5</h4>|#####  Title 5|
+|<h6>Titre 6</h6>|######  Title 6|
 
 #### Citation
+>\>ligne1  
+ligne2  
+
 >ligne 1  
 ligne 2  
-ligne 3  
-ligne 4  
+ 
 
 #### Separateur
+
+>\*******
 **************
-
-
-#### Image
-<img src="http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png" height="100px" />
-
-![Le logo d'active](http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png "markdown")
-
+### Listes
 #### Liste non ordonnée
+
+> \* item  
+··* sub item 1  <= deux espaces en début de ligne  
+··* sub item 2  
+\* item
+
 * item
-** sub item
+  * sub item 1 
+  * sub item 2
 * item
 * item
 
 #### Liste ordonnée
-1. item
+
+> 1\. item··  <= le saut de ligne est forcé par les deux espaces  
+1.1. sub item 1··   
+1.2. sub item 2··  
+2. item  
+3. item
+
+1. item  
+1.1. sub item 1   
+1.2. sub item 2
 2. item
 3. item
+
+
+**************
+#### Image
+
+\!\[logoname](http://url.com "altValue")  
+
+<img src="http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png" height="100px" />
+
+![Le logo d'active](http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png "markdown")
+
+
 
 #### Link
 <http://www.google.com>
