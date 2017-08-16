@@ -1,12 +1,12 @@
-# How To Markdown
+ï»¿# How To Markdown
 
-Faire une ligne avec un saut à la ligne  
-=> mettre deux espaces à la fin  
+Faire une ligne avec un saut Ã  la ligne  
+=> mettre deux espaces Ã  la fin  
 
 **Texte en gras**  
 *Texte en italique*
 
-Caratère au sens html &amp; => \&amp;
+CaratÃ¨ au sens html &amp; => \&amp;
 
 # Title 1
 ## Title 2
@@ -32,13 +32,13 @@ ligne 4
 
 ![Le logo d'active](http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png "markdown")
 
-#### Liste non ordonnée
+#### Liste non ordonnÃ©e
 * item
 ** sub item
 * item
 * item
 
-#### Liste ordonnée
+#### Liste ordonnÃ©e
 1. item
 2. item
 3. item
