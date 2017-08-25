@@ -1,0 +1,36 @@
+﻿# Fragmentation des index
+
+## Qu'est ce que la fragmentation des index
+https://blog.developpez.com/mikedavem/p10152/sql-server-2005/architecture/fragmentation_des_indexes_et_fragments_q
+
+## Mesurer la fragmentation dans une base
+https://docs.microsoft.com/fr-fr/sql/relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql
+
+```` sql
+SELECT 
+    s.Name AS SchemaName,
+    t.NAME AS TableName,
+    i.[Name],
+    stat.avg_fragmentation_in_percent
+FROM sys.tables t
+INNER JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
+INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
+INNER JOIN sys.dm_db_index_physical_stats (DB_ID(DB_NAME()),NULL,NULL,NULL,NULL) stat
+        ON t.object_id = stat.object_id
+WHERE stat.avg_fragmentation_in_percent > 30
+ORDER BY stat.avg_fragmentation_in_percent DESC
+````
+## Défragmenter une table
+https://docs.microsoft.com/fr-fr/sql/relational-databases/indexes/reorganize-and-rebuild-indexes
+
+#### Dégframenter tous les index d'une table
+
+Pour un index fragmenté **entre  5% et 30%**, il est conseillé de le réorganiser
+```` sql
+ALTER INDEX ALL ON {db_name} REORGANIZE;
+````
+
+Pour un index fragmenté à **plus de 30%**, il est conseillé de le reconstruire
+```` sql
+ALTER INDEX ALL ON {db_name} REBUILD WITH (ONLINE = ON);
+````
