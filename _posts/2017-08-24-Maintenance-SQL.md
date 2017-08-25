@@ -27,10 +27,10 @@ https://docs.microsoft.com/fr-fr/sql/relational-databases/indexes/reorganize-and
 
 Pour un index fragmenté **entre  5% et 30%**, il est conseillé de le réorganiser
 ```` sql
-ALTER INDEX ALL ON {db_name} REORGANIZE;
+ALTER INDEX ALL ON {tablename} REORGANIZE;
 ````
 
 Pour un index fragmenté à **plus de 30%**, il est conseillé de le reconstruire
 ```` sql
-ALTER INDEX ALL ON {db_name} REBUILD WITH (ONLINE = ON);
+ALTER INDEX ALL ON {tablename} REBUILD WITH (ONLINE = ON);
 ````
