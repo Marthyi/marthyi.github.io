@@ -9,6 +9,7 @@ consectetur adipiscing eli...
 |**Texte en gras**|\*\*Texte en gras**|  
 |*Texte en italic*|\*Texte en italic*|  
 |Caractère spécial|Caract\&egrave;re sp\&eacute;cial|
+|[Link to google](http://www.google.com)|\[Link\]\(http://www.google.com\)|  
 |<h1>Titre 1</h1> |# Title 1|
 |<h2>Titre 2</h2>|## Title 2|
 |<h3>Titre 3</h3>|### Title 3 |
@@ -65,11 +66,6 @@ ligne 2
 <img src="http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png" height="100px" />
 
 ![Le logo d'active](http://mikemclin.net/mmwp/wp-content/uploads/2013/03/markdown-syntax-language.png "markdown")
-
-
-
-#### Link
-<http://www.google.com>
 
 #### Tableau
 
