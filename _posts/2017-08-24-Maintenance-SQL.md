@@ -1,10 +1,10 @@
 ﻿# Fragmentation des index
 
 ## Qu'est ce que la fragmentation des index
-https://blog.developpez.com/mikedavem/p10152/sql-server-2005/architecture/fragmentation_des_indexes_et_fragments_q
+[Article de blog](https://blog.developpez.com/mikedavem/p10152/sql-server-2005/architecture/fragmentation_des_indexes_et_fragments_q)
 
 ## Mesurer la fragmentation dans une base
-https://docs.microsoft.com/fr-fr/sql/relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql
+[Documentation msdn](https://docs.microsoft.com/fr-fr/sql/relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql)
 
 ```` sql
 SELECT 
