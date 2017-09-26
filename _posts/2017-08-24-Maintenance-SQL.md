@@ -1,4 +1,4 @@
-﻿## Taille des tables en bases de données
+﻿## Taille des tables en bases de donn&eacute;es
 
 ```` sql
 SELECT 
