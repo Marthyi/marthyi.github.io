@@ -10,7 +10,7 @@ date_format:
   categories: "%b-%Y"
   tag: "%b-%Y"
 # Language
-lan: "fr" 
+lan: "en" 
 
 paginate: 10
 
