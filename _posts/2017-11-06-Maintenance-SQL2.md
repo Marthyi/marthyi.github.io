@@ -1,5 +1,5 @@
 ﻿---
-tag: Sql-Server
+tags: Sql-Server
 ---
 
 
@@ -22,5 +22,5 @@ ORDER BY CPUTime DESC
 ````
 ## Kill une requête
 ```` sql
-KILL 108 # 108
+KILL 108 # 108 est une spid (Server Process ID)
 ````

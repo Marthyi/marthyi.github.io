@@ -1,5 +1,5 @@
 ﻿---
-tag: Sql-Server
+tags: Sql-Server
 ---
 
 ## Taille des tables en bases de donn&eacute;es
