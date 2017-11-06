@@ -1,9 +1,29 @@
-title: Marthyi.GitHub.io
-show_downloads: false
-theme: jekyll-theme-cayman
+# Jekyll configuration
+title: Marthyi.GitHub.io 
+name: Marthyi.GitHub.io 
+description: Welcome to Marthyi.GitHub.io！
 
-extensions: [fenced_code_blocks]
+# url is currently only used only for the RSS feed in feed.xml
+url: https://github.com/zxixia/jekyll-xixia
 
-gems: jekyll-mentions
-gems: jekyll-paginate
-paginate: 5
+# baseurl will often be '', but for a project page on gh-pages, it needs to
+# be the project name.
+# *** IMPORTANT: If your local "jekyll serve" throws errors change this to '' or
+#     run it like so: jekyll serve --baseurl=''
+baseurl: '/jekyll-xixia'
+## default date_format
+date_format: 
+  title: "%B-%-d-%Y"
+  archive: "%b"
+  categories: "%b-%Y"
+  tag: "%b-%Y"
+# Language
+lan: "fr" 
+
+paginate: 10
+
+highlighter: rouge
+markdown: kramdown
+gems: ['jekyll-paginate']
+
+exclude: ['README.md', 'LICENSE', "*.bak"]
