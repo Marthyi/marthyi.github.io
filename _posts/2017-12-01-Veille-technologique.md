@@ -17,6 +17,9 @@ tags: veille-watch
 - [Le journal du Net](http://www.journaldunet.com/)
 - [Le Mag IT](http://www.lemagit.fr/)
 
+### Datasciences
+- [blog sicara.com](https://blog.sicara.com/)
+
 ### Architecture
 - [High Scalability](http://highscalability.com/)
 
