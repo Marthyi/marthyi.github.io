@@ -33,12 +33,14 @@ public string Firstname {get;set;} = "Hello";
 public string Fullname  => $"{Firstname} {Lastname}"; // propert expression-bodied
 public string SayHello(string name) => "Hello {name}!"; // method expression-bodied
 ````
-- using static
-```csharp
+- Les 'using' static
+
+````csharp
 using static System.Console; // Console is static class
 
 WriteLine("Hello World");
 ````
+
 - Opérateur null
 ```csharp
 var person =null;
