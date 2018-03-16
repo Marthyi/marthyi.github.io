@@ -79,7 +79,8 @@ PrintOrderDetails(int orderNum,string productName,string sellerName);
 // méthode avec arguments nommés
 PrintOrderDetails(orderNum: 31, productName: "Red Mug", sellerName: "Gift Shop");
 ````
-**/!\ A partir de C#7.2, l'ordre des arguments sera vérifié**
+**/!\ A partir de C#7.2, l\'ordre des arguments sera vérifié**
+
 **************************************************
 ## C# 3
 - Date de sortie: 2003
