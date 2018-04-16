@@ -12,7 +12,7 @@ tags: veille-watch
 
 
 ### Actualités IT
-- [ArsTechnica](arstechnica.com)
+- [ArsTechnica](http://www.arstechnica.com)
 - [Clubic](http://www.clubic.com/)
 - [Le journal du Net](http://www.journaldunet.com/)
 - [Le Mag IT](http://www.lemagit.fr/)
