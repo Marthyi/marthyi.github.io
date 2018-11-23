@@ -13,13 +13,14 @@ SELECT
     t.NAME AS TableName,
     i.[Name],
     stat.avg_fragmentation_in_percent
+	--stat.*
 FROM sys.tables t
 INNER JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
 INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
 INNER JOIN sys.dm_db_index_physical_stats (DB_ID(DB_NAME()),NULL,NULL,NULL,NULL) stat
-        ON t.object_id = stat.object_id
-WHERE stat.avg_fragmentation_in_percent > 30
-ORDER BY stat.avg_fragmentation_in_percent DESC
+        ON t.object_id = stat.object_id and stat.index_id = i.index_id
+where stat.avg_fragmentation_in_percent > 30
+ORDER BY t.name,stat.avg_fragmentation_in_percent  DESC
 ````
 ### Défragmenter une table
 https://docs.microsoft.com/fr-fr/sql/relational-databases/indexes/reorganize-and-rebuild-indexes
