@@ -8,19 +8,29 @@ tags: Sql-Server
 [Documentation msdn](https://docs.microsoft.com/fr-fr/sql/relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql)
 
 ```` sql
+with sqldata as
+(
 SELECT 
     s.Name AS SchemaName,
     t.NAME AS TableName,
-    i.[Name],
-    stat.avg_fragmentation_in_percent
-	--stat.*
+    i.[Name] AS IndexName,
+	i.index_id AS IndexId,
+	t.object_id AS TableId,
+    stat.avg_fragmentation_in_percent AS Fragmentation,	
+    CAST(CAST(stat.avg_fragmentation_in_percent as numeric(36,2)) AS nvarchar) + '%' AS FragmentationDescription,	
+	stat.index_type_desc AS IndexDescription,
+	stat.alloc_unit_type_desc AS IndexMemoryType,
+	stat.partition_number
 FROM sys.tables t
 INNER JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
 INNER JOIN sys.schemas s ON t.schema_id = s.schema_id
-INNER JOIN sys.dm_db_index_physical_stats (DB_ID(DB_NAME()),NULL,NULL,NULL,NULL) stat
-        ON t.object_id = stat.object_id and stat.index_id = i.index_id
-where stat.avg_fragmentation_in_percent > 30
-ORDER BY t.name,stat.avg_fragmentation_in_percent  DESC
+INNER JOIN sys.dm_db_index_physical_stats (DB_ID(DB_NAME()),NULL,NULL,NULL,NULL) stat ON t.object_id = stat.object_id and stat.index_id = i.index_id
+)
+select 
+SchemaName, TableName, IndexName,partition_number, IndexId, FragmentationDescription,IndexDescription,IndexMemoryType
+ from sqldata
+ where Fragmentation > 30
+order by  Fragmentation desc
 ````
 ### Défragmenter une table
 https://docs.microsoft.com/fr-fr/sql/relational-databases/indexes/reorganize-and-rebuild-indexes
