@@ -5,17 +5,16 @@ tags: Sql-Server
 ## Taille des tables en bases de donn&eacute;es
 
 ```` sql
-SELECT 
-    s.Name AS SchemaName,
-    t.NAME AS TableName,
-    p.rows AS RowCounts,
-    CAST(ROUND(((SUM(a.total_pages) * 8) / 1024.00 / 1024), 2) AS NUMERIC(36, 2)) AS TotalSpaceGB,
-    CAST(ROUND(((SUM(a.total_pages) * 8) / 1024.00), 2) AS NUMERIC(36, 2)) AS TotalSpaceMB
-FROM 
-    sys.tables t
-INNER JOIN sys.indexes i ON t.OBJECT_ID = i.object_id
-INNER JOIN sys.partitions p ON i.object_id = p.OBJECT_ID AND i.index_id = p.index_id
-INNER JOIN sys.allocation_units a ON p.partition_id = a.container_id
-LEFT OUTER JOIN sys.schemas s ON t.schema_id = s.schema_id
-GROUP BY t.Name, s.Name, p.Rows
+select 
+CASE stats.index_id 
+    WHEN 0 THEN tables.name+' ( table )'
+    WHEN 1 THEN tables.name+' ( table )'
+    ELSE tables.name+' ( index )'
+END,
+indexes.type_desc,
+indexes.name, stats.used_page_count *8 / 1024 [Taille MB],stats.used_page_count *8 / 1024 /1024 [Taille GB]
+FROM sys.tables tables
+INNER JOIN sys.dm_db_partition_stats stats ON stats.object_id = tables.object_id
+LEFT JOIN sys.indexes indexes ON indexes.index_id = stats.index_id AND indexes.object_id = tables.object_id
+order by tables.name, indexes.index_id
 ````
