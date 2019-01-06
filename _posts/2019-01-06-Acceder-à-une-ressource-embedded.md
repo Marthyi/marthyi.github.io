@@ -27,7 +27,9 @@ public static class EmbeddedRessources
         }
     }
 ````
-Pour un million d'accès à une même ressource, ce code à une durée de **2800 ms** depuis ma machine.
+
+ Pour un million d'accès à une même ressource, ce code à une durée de **2800 ms** depuis ma machine.
+
 
 #### Implémentation optimisée: 
 
@@ -35,7 +37,7 @@ Pour un million d'accès à une même ressource, ce code à une durée de **2800
 private static readonly ConcurrentDictionary<Assembly, string> _assemblyNameCache = new ConcurrentDictionary<Assembly, string>();
 private static readonly ConcurrentDictionary<string, string> _resourceCache = new ConcurrentDictionary<string, string>();
 
-public static string GetStringRessource2(this Assembly assembly, string resourcePath)
+public static string GetStringRessource(this Assembly assembly, string resourcePath)
 {
     string assemblyName = _assemblyNameCache.GetOrAdd(assembly, asm => assembly.GetName().Name);
 
@@ -50,4 +52,4 @@ public static string GetStringRessource2(this Assembly assembly, string resource
         });
 }
 ````
-Pour un million d'accès à une même ressource, ce code à une durée de **200 ms** depuis ma machine.
+ Pour un million d'accès à une même ressource, ce code à une durée de **200 ms** depuis ma machine.
