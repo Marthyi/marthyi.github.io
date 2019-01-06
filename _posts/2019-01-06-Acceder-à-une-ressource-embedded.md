@@ -1,5 +1,5 @@
 ﻿---
-tags: dotnet, tips
+tags: dotnet tips
 ---
 
 ## Cas d'usage
