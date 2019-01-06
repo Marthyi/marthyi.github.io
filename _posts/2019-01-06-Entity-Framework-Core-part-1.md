@@ -5,9 +5,10 @@ tags: entity-framework
 Note:  
 *il est a noter ici qu'on ne parlera des fonctionnalités d'entity framework, uniquement dans son usage d'accès à une base de données SQL Server*
 
+#### Prérequis
 Installer le package NuGet :  [Microsoft.EntityFrameworkCore.SqlServer](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.SqlServer/)
 
-## Premier accès au données
+## Premier accès aux données
 
 #### Le model
 ``` csharp
