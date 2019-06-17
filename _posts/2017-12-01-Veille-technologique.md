@@ -9,6 +9,7 @@ tags: veille-watch
 - [Human Coders News](https://news.humancoders.com/)
 - [InfoQ EN](https://www.infoq.com/)
 - [InfoQ France](https://www.infoq.com/fr)
+- [Reddit dotnet](https://www.reddit.com/r/dotnet/)
 
 
 ### Actualités IT
