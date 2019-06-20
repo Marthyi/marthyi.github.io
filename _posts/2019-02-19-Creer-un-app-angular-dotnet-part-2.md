@@ -11,7 +11,7 @@ cd OliApp
 rmdir e2e /q /s
 ````
 
-Afin de publier au build l'app angular dans le dossier wwwroot de l'application dotnet, il est nécessaire de modifier le fichier tsconfig.json
+Afin de publier au build l'app angular dans le dossier wwwroot de l'application dotnet, il est nécessaire de modifier le fichier angular.json
 
 ```json
  "architect": {
