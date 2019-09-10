@@ -1,5 +1,6 @@
 ﻿---
-tags: sql
+tags: Sql-Server
+categories: Sql-Server
 ---
 
 ## Afficher un datetime UTC en Paris Time
