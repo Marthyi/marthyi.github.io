@@ -3,9 +3,9 @@ tags: Sql-Server
 ---
 
 ## Définition
-**LOGIN** tuple (login,password) permettant une connexion
-**USER** compte associé à un serveur ou une base de données
-**ROLE** ensemble de persmissions d'accès à une base ou un server
+**LOGIN** tuple (login,password) permettant une connexion  
+**USER** compte associé à un serveur ou une base de données  
+**ROLE** ensemble de persmissions d'accès à une base ou un server  
 
 
 ## Gestion des Logins
@@ -22,7 +22,7 @@ DROP LOGIN <login>
 - Pour permettre à l'utilisateur de voir toutes les bases du serveur il faut créer le compte utilisateur depuis la base master
 
 ```sql
-USE <master|base spécificque>;
+USE <master|base specificque>;
 GO;
 CREATE USER <user_name> FOR LOGIN <login> WITH DEFAULT_SCHEMA = dbo
 `````
