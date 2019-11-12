@@ -34,6 +34,11 @@ CREATE USER <user_name> FOR LOGIN <login> WITH DEFAULT_SCHEMA = dbo
 ALTER ROLE <database_role> ADD MEMBER <user_name>
 ALTER ROLE <database_role> DROP MEMBER user_name
 `````
+### Restreindre les droits à un schéma
+```sql
+GRANT SELECT ON SCHEMA::<schema_name> TO <user_name>;
+````
+
 
 
 Références de l'article:

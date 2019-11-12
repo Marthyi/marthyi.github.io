@@ -10,6 +10,7 @@ tags: veille-watch
 - [InfoQ EN](https://www.infoq.com/)
 - [InfoQ France](https://www.infoq.com/fr)
 - [Reddit dotnet](https://www.reddit.com/r/dotnet/)
+- [Dev](https://dev.to/)
 
 
 ### Actualités IT
