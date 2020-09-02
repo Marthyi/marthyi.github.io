@@ -1,6 +1,12 @@
 <app-menu></app-menu>
 <div class="container">
   <app-page>
-    mon contenu
+    <button (click)='onClick()'>mon contenu</button>
+
+
+    <span>{{src}}</span>
+
+    <markdown [src]="src"></markdown>
+
   </app-page>
 </div>
