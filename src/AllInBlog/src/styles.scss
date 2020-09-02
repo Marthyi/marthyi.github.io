@@ -1,0 +1,35 @@
+@import "common";
+@import "colors";
+
+html,
+body {
+    @extend .full-size;
+    @extend .no-margins;
+    background-color: $bg-secondary;
+}
+
+a {
+    @extend .vertical-center;
+    @extend .full-size;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: open-sans;
+    src: url("/assets/fonts/OpenSans/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: open-sans;
+    src: url("/assets/fonts/OpenSans/OpenSans-Bold.ttf");
+    font-weight: bold;
+}
+
+body {
+    display: block;
+    font-family: open-sans;
+    * {
+        box-sizing: border-box;
+        @extend .no-margins;
+    }
+}

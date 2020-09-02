@@ -1,0 +1,1 @@
+ng new AllInBlog --minimal=true --routing=true --strict=true --style=scss --inlineTemplate=false --collection

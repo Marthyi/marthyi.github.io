@@ -1,0 +1,16 @@
+.full-size {
+    height: 100%;
+    width: 100%;
+}
+
+.no-margins {
+    margin: 0;
+    padding: 0;
+}
+
+.vertical-center{
+display: flex;
+align-items: center;
+}
+
+$menu-size: 70px;
