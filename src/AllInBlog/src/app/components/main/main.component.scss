@@ -7,8 +7,9 @@
     $padding-LR: 7vw;
     .container {
         width: 100%;
-        height: calc(100vh - #{$menu-size});
+        min-height: calc(100vh - #{$menu-size});
         display: flex;
         justify-content: space-around;
+        padding-bottom: 50px;
     }
 }

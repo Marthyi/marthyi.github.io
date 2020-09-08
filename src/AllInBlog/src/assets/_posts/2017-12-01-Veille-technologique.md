@@ -1,8 +1,4 @@
-﻿---
-tags: veille-watch
----
-
-## Ma Veille Techno
+﻿## Ma Veille Techno
 
 ### Actualités Développeur
 - [Développez.com](https://www.developpez.com/)

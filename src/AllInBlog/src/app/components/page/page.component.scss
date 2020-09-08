@@ -4,9 +4,9 @@
 :host {
   margin-top: 5vh;
   display: block;
-  background-color: $bg-content;
+  background-color: $bg-secondary;
   width: 75vw;
-  height: calc(100% - 5vh);
+  min-height: calc(100% - 5vh);
   border-radius: 5px;
   padding: 20px;
 }

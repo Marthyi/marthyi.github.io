@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { routes, paths } from "src/app/app.routes";
+import { Component } from "@angular/core";
+import {  paths } from "src/app/app.routes";
 
 @Component({
   selector: "app-menu",
@@ -9,8 +9,10 @@ import { routes, paths } from "src/app/app.routes";
 export class MenuComponent {
   title: string = "Marthyi.github.io";
 
+  ROUTES = paths;
+
   links = [
-    { name: "A propos", route: paths.Home },
-    { name: "A propos", route: paths.Home },
+    { name: "Article 1", route: paths.Post("2017-12-01-Bookmarks") },
+    { name: "A propos", route: paths.Post("2017-12-01-Veille-technologique") },
   ];
 }

@@ -1,0 +1,12 @@
+@import "common";
+
+:host {
+  display: block;
+
+  app-page {
+    display: flex;    
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+}

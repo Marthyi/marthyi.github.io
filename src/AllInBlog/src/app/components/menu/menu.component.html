@@ -1,6 +1,6 @@
 <div class="home-button">
-    <a routerLink='homed'>{{title}}</a>
+    <a [routerLink]='ROUTES.Home'>{{title}}</a>
 </div>
 <div class="links">
-    <span class="link" *ngFor="let link of links">{{link.name}}</span>
+    <div class="link" *ngFor="let link of links"><a [routerLink]='link.route'><span>{{link.name}}</span></a></div>
 </div>

@@ -1,0 +1,46 @@
+@import "colors";
+@import "common";
+
+:host {
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
+  border: 1px solid black;
+  border-radius: 5px;
+  $size: 400px;
+  width: $size;
+  height: $size / 2;
+  margin-bottom: 50px;
+  margin-right: 50px;
+
+  &:hover {
+    background-color: $primary;
+    color: $secondary !important;
+
+    transition: 400ms ease-in-out;
+  }
+
+  a {
+    @extend .full-size;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    .content{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    img{
+      height: 100px;
+      padding-right: 10px;
+    }
+
+    .title {
+      font-size: 20px;
+    }
+
+   
+  }
+}

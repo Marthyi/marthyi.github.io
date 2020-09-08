@@ -1,7 +1,3 @@
----
-tags: veille-watch
----
-
 ## Mes Bookmarks
 
 ### SQL

@@ -5,14 +5,24 @@ html,
 body {
     @extend .full-size;
     @extend .no-margins;
-    background-color: $bg-secondary;
+    background-color: $bg-content;
 }
 
 a {
     @extend .vertical-center;
     @extend .full-size;
     text-decoration: none;
+    color: inherit;
+
+    &:visited, &:hover, &:active {
+        color: inherit;
+      }
 }
+
+ul, li {
+    margin-left: 0;
+    padding-left: 0;
+  }
 
 @font-face {
     font-family: open-sans;

@@ -1,0 +1,14 @@
+<a [routerLink]="getLink()">
+    <div class="content">
+        <div *ngIf="post.image">
+            <img [src]="'/assets/img/'+post.image" />
+        </div>
+        <div>
+            <div class="title">{{post.title}}</div>
+            <div>
+                <i>créé le
+                    {{post.creationDate.getDate()}}/{{post.creationDate.getMonth()}}/{{post.creationDate.getFullYear()}}</i>
+            </div>
+        </div>
+    </div>
+</a>
