@@ -1,8 +1,4 @@
-﻿---
-tags: creer-une-app-dotnet-angular
----
-
-## Script de build
+﻿## Script de build
 
 A la racine de votre projet, au même niveau que src, créer un répertoire build.
 

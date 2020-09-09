@@ -1,8 +1,4 @@
-﻿---
-tags: creer-une-app-dotnet-angular
----
-
-## Prérequis
+﻿## Prérequis
 
 * Créer un dossier Parent (Oliv.Blog)
 * Créer un dossier 'src' pour contenir la solution

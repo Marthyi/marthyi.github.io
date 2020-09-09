@@ -1,8 +1,4 @@
-﻿---
-tags: tips
----
-
-### Mise en place des raccourcis
+﻿### Mise en place des raccourcis
 
 Créer un dossier afin de déposer les raccourcis
 

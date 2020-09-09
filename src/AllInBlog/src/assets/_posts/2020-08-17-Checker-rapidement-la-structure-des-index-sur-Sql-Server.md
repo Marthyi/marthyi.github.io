@@ -1,8 +1,4 @@
-﻿---
-tags: Sql-Server
----
-
-```sql
+﻿```sql
 DECLARE @tablename NVARCHAR(256) = 'XXX';
 
 

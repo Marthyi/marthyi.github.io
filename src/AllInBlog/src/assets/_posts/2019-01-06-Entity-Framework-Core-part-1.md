@@ -1,8 +1,4 @@
-﻿---
-tags: entity-framework
----
-
-Note:  
+﻿Note:  
 *il est a noter ici qu'on ne parlera des fonctionnalités d'entity framework, uniquement dans son usage d'accès à une base de données SQL Server*
 
 #### Prérequis

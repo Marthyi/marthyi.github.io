@@ -1,8 +1,4 @@
-﻿---
-tags: Sql-Server
----
-
-## Définition
+﻿## Définition
 **LOGIN** tuple (login,password) permettant une connexion  
 **USER** compte associé à un serveur ou une base de données  
 **ROLE** ensemble de persmissions d'accès à une base ou un server  

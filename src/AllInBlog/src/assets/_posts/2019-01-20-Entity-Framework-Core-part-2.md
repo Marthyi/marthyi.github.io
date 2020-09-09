@@ -1,7 +1,4 @@
-﻿---
-tags: entity-framework
----
-## Migrations de la base de données
+﻿## Migrations de la base de données
 
 ### Set-up
 - Le package [Microsoft.EntityFrameworkCore.Design](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore.Design/) est requis pour permettre le fonctionnement de la CLI EF Core.

@@ -1,8 +1,4 @@
-﻿---
-tags: dotnet tips
----
-
-![img](/images/appsettings.png)
+﻿![img](/images/appsettings.png)
 
 ``` xml 
  <ItemGroup>

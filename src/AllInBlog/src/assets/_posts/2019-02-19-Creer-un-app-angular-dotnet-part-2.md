@@ -1,9 +1,4 @@
-﻿---
-tags: creer-une-app-dotnet-angular
----
-
-
-## Création de l'app Angular
+﻿## Création de l'app Angular
 
 ```bat
 ng new OliApp  --minimal=true --style=scss --skipGit=true --skipTests=true

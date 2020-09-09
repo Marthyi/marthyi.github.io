@@ -1,8 +1,4 @@
-﻿---
-tags: dotnet tips
----
-
-## Cas d'usage
+﻿## Cas d'usage
 - Lorsque l'on requête une base de données SQL, il peut être plus pratique d'enregistrer ses requêtes dans un fichier SQL que directement dans une string au sein de son code.
 
 Voici une solution pour accéder à ces ressources embedded.

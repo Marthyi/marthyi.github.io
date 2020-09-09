@@ -16,7 +16,7 @@ constructor() {
 }
 
   getLink():string {
-    return paths.Post(this.post.fileName);
+    return paths.Post(encodeURI(this.post.fileName));
   } 
 
 }

@@ -1,13 +1,10 @@
-﻿---
-tags: Sql-Server
----
-### Qu'est ce que la fragmentation des index
+﻿### Qu'est ce que la fragmentation des index
 [Article de blog](https://blog.developpez.com/mikedavem/p10152/sql-server-2005/architecture/fragmentation_des_indexes_et_fragments_q)
 
 ### Mesurer la fragmentation dans une base
 [Documentation msdn](https://docs.microsoft.com/fr-fr/sql/relational-databases/system-dynamic-management-views/sys-dm-db-index-physical-stats-transact-sql)
 
-```` sql
+```csharp
 with sqldata as
 (
 SELECT 
@@ -32,6 +29,7 @@ SchemaName, TableName, IndexName,partition_number, IndexId, FragmentationDescrip
  where Fragmentation > 30
 order by  Fragmentation desc
 ````
+
 ### Défragmenter une table
 https://docs.microsoft.com/fr-fr/sql/relational-databases/indexes/reorganize-and-rebuild-indexes
 

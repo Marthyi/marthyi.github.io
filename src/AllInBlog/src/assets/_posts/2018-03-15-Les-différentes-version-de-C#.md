@@ -1,9 +1,4 @@
-﻿---
-tags: dotnet
----
-
-
-## C# 7.1
+﻿## C# 7.1
 Date de sortie: 2017
 #### Fonctionnalités
 - prochainement dans un article dédié

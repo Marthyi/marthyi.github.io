@@ -1,9 +1,4 @@
-﻿---
-tags: Sql-Server
-categories: Sql-Server
----
-
-## Afficher un datetime UTC en Paris Time
+﻿## Afficher un datetime UTC en Paris Time
 
 ````sql
 SELECT CAST(EV.CreationDateTime AT TIME ZONE 'Romance Standard Time' as datetime) CreationDateTime

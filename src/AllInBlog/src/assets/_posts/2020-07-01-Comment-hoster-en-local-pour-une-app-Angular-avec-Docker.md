@@ -1,8 +1,4 @@
-﻿---
-tags: Angular docker
----
-
-Notre application sera serice par NGINX sous docker
+﻿Notre application sera serice par NGINX sous docker
 
 ````docker
 # l'image de départ est une version light (<10Mo) 

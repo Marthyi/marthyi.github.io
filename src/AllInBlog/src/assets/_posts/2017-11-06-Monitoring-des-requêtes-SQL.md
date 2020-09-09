@@ -1,9 +1,4 @@
-﻿---
-tags: Sql-Server
----
-
-
-## Liste des requêtes sql en cours
+﻿## Liste des requêtes sql en cours
 ```` sql
 SELECT  
 	spid,
