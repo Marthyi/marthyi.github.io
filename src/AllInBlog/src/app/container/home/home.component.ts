@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { PostService } from "src/app/services/post.service";
-import { PostServiceModel } from 'src/app/services/serviceModels/serviceModels';
+import { PostModel } from "src/app/services/serviceModels/serviceModels";
 
 @Component({
   selector: "app-home",
@@ -8,9 +8,12 @@ import { PostServiceModel } from 'src/app/services/serviceModels/serviceModels';
   styleUrls: ["./home.component.scss"],
 })
 export class HomeComponent {
-  constructor(private ps: PostService) {
-    this.posts = ps.getPosts();
-  }
+  public posts: PostModel[] = [];
 
-  public posts: PostServiceModel[];
+  constructor(private ps: PostService) {   
+
+    this.ps.getPosts().subscribe((p) => {
+      this.posts = p;
+    });
+  }
 }

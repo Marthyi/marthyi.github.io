@@ -1,5 +1,5 @@
 import { Component, Input } from "@angular/core";
-import { PostServiceModel } from "src/app/services/serviceModels/serviceModels";
+import { PostModel } from "src/app/services/serviceModels/serviceModels";
 import { paths } from 'src/app/app.routes';
 
 @Component({
@@ -9,7 +9,7 @@ import { paths } from 'src/app/app.routes';
 })
 export class PostLinkComponent {
   @Input("post")
-  post!: PostServiceModel;
+  post!: PostModel;
 
 constructor() {
   
