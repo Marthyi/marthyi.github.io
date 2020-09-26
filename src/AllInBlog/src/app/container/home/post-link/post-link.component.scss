@@ -8,7 +8,7 @@
   border: 1px solid $primary;
   background-color: lighten($primary,36%);
   border-radius: 5px;
-  $size: 400px;
+  $size: 320px;
   width: $size;
   height: $size / 2;
   margin-bottom: 50px;
@@ -40,7 +40,7 @@
     }
 
     .title {
-      font-size: 20px;
+      font-size: 16px;
     }
 
    

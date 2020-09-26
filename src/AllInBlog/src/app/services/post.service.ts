@@ -22,7 +22,6 @@ export class PostService {
     response= this.httpClient
       .get<PostServiceModel[]>("/assets/api/posts.json")
       .pipe(
-        delay(1000),
         map((p) => p.map(this.mapPostModel))
         );
 

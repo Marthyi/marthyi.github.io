@@ -27,7 +27,7 @@ export class ArticleComponent {
     
     this.article = "/assets/_posts/" + decodeURI(post) + ".md";
 
-    this.title = post.replace(/\d{4}-\d{2}-\d{2}/,' ');
+    this.title = decodeURI(post).replace(/\d{4}-\d{2}-\d{2}/,' ');
     this.title = this.title.replace(/-/gi,' ');
 
 
