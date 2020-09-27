@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { HashLocationStrategy, LocationStrategy } from "@angular/common";
 import { routes } from "./app.routes";
 import { MainComponent } from "./components/main/main.component";
 import { RouterModule } from "@angular/router";
@@ -10,7 +11,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { ArticleComponent } from "./container/article/article.component";
 import { HomeComponent } from "./container/home/home.component";
 import { PostService } from "./services/post.service";
-import { PostLinkComponent } from './container/home/post-link/post-link.component';
+import { PostLinkComponent } from "./container/home/post-link/post-link.component";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,10 @@ import { PostLinkComponent } from './container/home/post-link/post-link.componen
     MarkdownModule.forRoot({ loader: HttpClient }),
     RouterModule.forRoot(routes),
   ],
-  providers: [PostService],
+  providers: [
+    PostService,
+    { provide: LocationStrategy, useClass: HashLocationStrategy },
+  ],
   bootstrap: [MainComponent],
 })
 export class AppModule {}
