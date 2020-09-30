@@ -8,7 +8,19 @@ call npm install
 call ng build --prod 
 
 cd %current_dir%
-call publish.bat
+
+cd ..
+
+DEL /F/Q *.ico
+DEL /F/Q *.html
+DEL /F/Q *.css
+DEL /F/Q *.js
+DEL /F/Q *.txt
+RMDIR /Q/S assets
+
+cd %current_dir%
+
+Powershell.exe -executionpolicy remotesigned -File  publish_dist.ps1
 
 cd %current_dir%
 @echo on
