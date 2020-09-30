@@ -10,10 +10,14 @@ import { PostModel } from "src/app/services/serviceModels/serviceModels";
 export class HomeComponent {
   public posts: PostModel[] = [];
 
-  constructor(private ps: PostService) {   
-
+  constructor(private ps: PostService) {
     this.ps.getPosts().subscribe((p) => {
-      this.posts = p;
+      this.posts = p.sort((a, b) => this.compareDate(b, a) );
     });
+  }
+
+  compareDate(a: PostModel, b: PostModel): number {
+    console.log({ a, b, x: a.creationDate.valueOf() - b.creationDate.valueOf() });
+    return a.creationDate.valueOf() - b.creationDate.valueOf();
   }
 }

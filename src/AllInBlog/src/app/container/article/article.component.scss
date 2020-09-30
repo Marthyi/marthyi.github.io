@@ -1,7 +1,19 @@
+@import "common";
+@import "colors";
+
 :host {
   display: block;
 
   app-page {
     padding-left: 50px;
+  }
+
+  ::ng-deep {
+    a {
+      &:hover {
+        color: $primary;
+        text-decoration: underline;
+      }
+    }
   }
 }

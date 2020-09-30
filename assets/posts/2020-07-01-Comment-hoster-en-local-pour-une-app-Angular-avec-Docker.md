@@ -26,7 +26,7 @@ server {
 ````
 
 ### Create & run docker 
-````powershell
+````batch
 docker build --rm --file local.dockerfile --tag klai .
 
 docker run -d -p 8080:80 -v ${PWD}/klai/dist/klai:/usr/share/nginx/html klai 
@@ -37,7 +37,7 @@ docker run -d -p 8080:80 -v ${PWD}/klai/dist/klai:/usr/share/nginx/html klai
 
 
 ### tips auto-rebuild angular
-````powershell
+````batch
 ng build --watch --aot --output-hashing none
 ````
 

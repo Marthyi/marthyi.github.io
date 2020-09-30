@@ -92,19 +92,22 @@
         "title": "2019-02-06-Supprimer-les-fichiers-bin-et-obj-de-ma-solution"
     },
     {
-        "title": "2019-02-15-Creer-un-app-angular-dotnet-part-1"
+        "title": "2019-02-15-Creer-un-app-angular-dotnet-part-1",
+        "image": "angular.png"
     },
     {
-        "title": "2019-02-19-Creer-un-app-angular-dotnet-part-2"
+        "title": "2019-02-19-Creer-un-app-angular-dotnet-part-2",
+        "image": "angular.png"
     },
     {
-        "title": "2019-02-25-Creer-un-app-angular-dotnet-part-3"
+        "title": "2019-02-25-Creer-un-app-angular-dotnet-part-3",
+        "image": "angular.png"
     },
     {
         "title": "2019-03-15-Raccourcis-windows"
     },
     {
-        "title": "2019-08-22-C# 7.1",
+        "title": "2019-08-22-Csharp-7.1",
         "image": "c_sharp.png",
         "tags": [
             "C#"
@@ -125,7 +128,8 @@
         ]
     },
     {
-        "title": "2020-07-01-Comment-hoster-en-local-pour-une-app-Angular-avec-Docker"
+        "title": "2020-07-01-Comment-hoster-en-local-pour-une-app-Angular-avec-Docker",
+        "image": "docker.png"
     },
     {
         "title": "2020-08-17-Checker-rapidement-la-structure-des-index-sur-Sql-Server",

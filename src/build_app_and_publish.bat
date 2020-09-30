@@ -8,4 +8,7 @@ call npm install
 call ng build --prod 
 
 cd %current_dir%
+call publish.bat
+
+cd %current_dir%
 @echo on

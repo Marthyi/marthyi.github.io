@@ -12,7 +12,7 @@ export class MenuComponent {
   ROUTES = paths;
 
   links = [
-    { name: "Article 1", route: paths.Post("2017-12-01-Bookmarks") },
-    { name: "A propos", route: paths.Post("2017-12-01-Veille-technologique") },
+    { name: "Veille Techno", route: paths.Post("2017-12-01-Veille-technologique") },
+    { name: "Mes références", route: paths.Post("2020-01-01-References") },
   ];
 }
