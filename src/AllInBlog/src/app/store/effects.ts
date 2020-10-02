@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import { Actions, Effect, ofType } from "@ngrx/effects";
 import { ActionCreator, Creator } from "@ngrx/store";
 import { Observable, of } from "rxjs";
-import { delay, mergeMap, switchMap } from "rxjs/operators";
+import { switchMap } from "rxjs/operators";
 import { PostService } from "../services/post.service";
 import { PostModel } from "../services/serviceModels/serviceModels";
 import { LoadedPostsModel, StateActions } from "./actions";
@@ -13,7 +13,6 @@ export class Effects {
 
   @Effect()
   $increment = this.onAction(StateActions.Home.loadPosts).pipe(
-    delay(500),
     switchMap((p) =>
       this.ps
         .getPosts()
