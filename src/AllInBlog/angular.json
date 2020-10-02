@@ -10,6 +10,7 @@
           "inlineTemplate": false,
           "inlineStyle": false,
           "style": "scss",
+          "changeDetection": "OnPush",
           "skipTests": true,
           "displayBlock": true
         },

@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
 import { PostModel } from "src/app/services/serviceModels/serviceModels";
 import { paths } from 'src/app/app.routes';
 
@@ -6,6 +6,7 @@ import { paths } from 'src/app/app.routes';
   selector: "app-post-link",
   templateUrl: "./post-link.component.html",
   styleUrls: ["./post-link.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PostLinkComponent {
   @Input("post")

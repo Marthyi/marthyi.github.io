@@ -1,10 +1,11 @@
-import { Component } from "@angular/core";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
 import {  paths } from "src/app/app.routes";
 
 @Component({
   selector: "app-menu",
   templateUrl: "./menu.component.html",
-  styleUrls: ["./menu.component.scss"],
+  styleUrls: ["./menu.component.scss"],  
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuComponent {
   title: string = "Marthyi.github.io";
