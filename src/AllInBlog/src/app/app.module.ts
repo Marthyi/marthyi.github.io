@@ -12,6 +12,12 @@ import { ArticleComponent } from "./container/article/article.component";
 import { HomeComponent } from "./container/home/home.component";
 import { PostService } from "./services/post.service";
 import { PostLinkComponent } from "./container/home/post-link/post-link.component";
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store/actions';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { Effects } from './store/effects';
+
 
 @NgModule({
   declarations: [
@@ -25,8 +31,11 @@ import { PostLinkComponent } from "./container/home/post-link/post-link.componen
   imports: [
     BrowserModule,
     HttpClientModule,
+    StoreModule.forRoot(reducers),
+    //StoreDevtoolsModule.instrument(),
+    EffectsModule.forRoot([Effects]),
     MarkdownModule.forRoot({ loader: HttpClient }),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes),    
   ],
   providers: [
     PostService,

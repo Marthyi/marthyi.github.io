@@ -1,8 +1,11 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { Store } from '@ngrx/store';
 import { Observable } from "rxjs";
-import { map } from "rxjs/operators";
-import { PostService } from "src/app/services/post.service";
 import { PostModel } from "src/app/services/serviceModels/serviceModels";
+import { StateActions } from 'src/app/store/actions';
+import { HomeStateStatus, IAppState } from 'src/app/store/models';
+import { selectHomeStateStatus, selectPosts } from 'src/app/store/selectors';
+
 
 @Component({
   selector: "app-home",
@@ -11,17 +14,17 @@ import { PostModel } from "src/app/services/serviceModels/serviceModels";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent {
-  public $posts: Observable<PostModel[]> = new Observable<PostModel[]>();
+  public STATES = HomeStateStatus;
+  public posts$: Observable<PostModel[]>;
+  public status$: Observable<HomeStateStatus>;
 
-  constructor(private ps: PostService) {
-    this.$posts = this.ps
-      .getPosts()
-      .pipe(
-        map((p:PostModel[]) => p.sort((a, b) => this.compareDate(b, a)))        
-      );  
+  constructor(private store: Store<IAppState>) {
+
+    this.posts$ = this.store.select(selectPosts);
+    this.status$ = this.store.select(selectHomeStateStatus);     
+
+    this.store.dispatch(StateActions.Home.loadPosts());
   }
 
-  compareDate(a: PostModel, b: PostModel): number {
-    return a.creationDate.valueOf() - b.creationDate.valueOf();
-  }
+ 
 }
