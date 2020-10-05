@@ -1,36 +1,20 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+import { IAppState, SelectedPost } from "src/app/store/models";
+import { selectedPost } from 'src/app/store/selectors';
+
 
 @Component({
   selector: "app-article",
   templateUrl: "./article.component.html",
   styleUrls: ["./article.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ArticleComponent {
-  article: string = "";
-  title: string = "";
+  post$: Observable<SelectedPost|null>;
 
-  constructor(private route: ActivatedRoute) {
-    console.log("new path " + this.route.snapshot.paramMap.get("post"));
-
-    this.setPost(this.route.snapshot.paramMap.get("post"));
-
-    this.route.paramMap.subscribe((p) => {
-      this.setPost(p.get("post"));
-    });
-  }
-
-  setPost(post: string | null) {
-    if (post == null) {
-      return;
-    }
-    
-    this.article = "/assets/posts/" + decodeURI(post) + ".md";
-
-    this.title = decodeURI(post).replace(/\d{4}-\d{2}-\d{2}/,' ');
-    this.title = this.title.replace(/-/gi,' ');
-
-
+  constructor(private store: Store<IAppState>) {
+    this.post$ = this.store.select(selectedPost);    
   }
 }

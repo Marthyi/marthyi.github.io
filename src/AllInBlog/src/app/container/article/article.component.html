@@ -1,4 +1,4 @@
 <app-page>
-  <h1>{{title}}</h1>
-  <markdown [src]="article"></markdown>
+  <h1>{{(post$ |async )?.title}}</h1>
+  <markdown [src]="(post$ | async)?.url"></markdown>
 </app-page>

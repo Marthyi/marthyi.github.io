@@ -13,7 +13,13 @@ MIT
 @ngrx/effects
 MIT
 
+@ngrx/router-store
+MIT
+
 @ngrx/store
+MIT
+
+@ngrx/store-devtools
 MIT
 
 css-loader

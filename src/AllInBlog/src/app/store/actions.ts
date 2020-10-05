@@ -1,16 +1,24 @@
-import { ActionReducerMap, createAction, createReducer, on, props } from "@ngrx/store";
-import { PostModel } from '../services/serviceModels/serviceModels';
+import * as fromRouter from "@ngrx/router-store";
+import { routerReducer } from '@ngrx/router-store';
+import {
+  ActionReducerMap,
+  createAction,
+  createReducer,
+  on,
+  props,
+} from "@ngrx/store";
+import { PostModel } from "../services/serviceModels/serviceModels";
 import { HomeState, HomeStateStatus, IAppState, initialState } from "./models";
 
-export interface LoadedPostsModel{
+export interface LoadedPostsModel {
   posts: PostModel[];
 }
 
 export const StateActions = {
   Home: {
     loadPosts: createAction("[Home] Load Posts"),
-    loadedPosts: createAction("[Home] Loaded Posts", props<LoadedPostsModel>())
-  }
+    loadedPosts: createAction("[Home] Loaded Posts", props<LoadedPostsModel>()),
+  },
 };
 
 function LoadPostsAction(state: HomeState): HomeState {
@@ -20,7 +28,7 @@ function LoadPostsAction(state: HomeState): HomeState {
   };
 }
 
-function LoadedPostsAction(state: HomeState, rq : LoadedPostsModel): HomeState {
+function LoadedPostsAction(state: HomeState, rq: LoadedPostsModel): HomeState {
   return {
     ...state,
     posts: rq.posts,
@@ -36,4 +44,5 @@ export const applicationStateReducer = createReducer<HomeState>(
 
 export const reducers: ActionReducerMap<IAppState> = {
   home: applicationStateReducer,
+  router: routerReducer
 };
