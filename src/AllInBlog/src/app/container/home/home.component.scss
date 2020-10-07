@@ -5,8 +5,14 @@
 
   app-page {
     display: flex;    
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    
+    @media (max-width: $small-width){
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+
   }
 }
