@@ -1,6 +1,4 @@
-﻿## Ma Veille Techno
-
-### Actualités Développeur
+﻿### Actualités Développeur
 - [Développez.com](https://www.developpez.com/)
 - [Human Coders News](https://news.humancoders.com/)
 - [InfoQ EN](https://www.infoq.com/)

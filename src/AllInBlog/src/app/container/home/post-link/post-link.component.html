@@ -1,8 +1,11 @@
 <a [routerLink]="getLink()">
     <div class="content">
-        <div *ngIf="post.image">
+        <div *ngIf="post.image;else defaultImage">
             <img [src]="'/assets/img/'+post.image" />
         </div>
+        <ng-template #defaultImage>
+            <img [src]="'/assets/img/article.svg'" />
+        </ng-template>
         <div>
             <div class="title">{{post.title}}</div>
             <div>
