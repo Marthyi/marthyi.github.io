@@ -14,18 +14,19 @@
 - [Le Mag IT](http://www.lemagit.fr/)
 
 ### Microsoft
-- [MSDN Magazine](https://msdn.microsoft.com/en-us/magazine/)
+- [.Net core](https://github.com/dotnet/core)
 - [MSDN .Net Blog](https://blogs.msdn.microsoft.com/dotnet/)
 - [Visual Studio Magazine](https://visualstudiomagazine.com/Home.aspx)
 
 ### Blog .NET
-- [.Net escapes](https://andrewlock.net/#open)
-- [Scott Hanselman](https://www.hanselman.com/blog/)
 - [Cellenza](http://blog.cellenza.com/)
-- [Infinite Square](http://blogs.infinitesquare.com/)
-- [Octo](https://blog.octo.com/)
-- [Xebia](http://blog.xebia.fr/)
 - [JetBrains](https://blog.jetbrains.com/dotnet/)
+- [Infinite Square](http://blogs.infinitesquare.com/)
+- [.Net escapes](https://andrewlock.net/#open)
+- [Octo](https://blog.octo.com/)
+- [Soat](https://blog.soat.fr/)
+- [Scott Hanselman](https://www.hanselman.com/blog/)
+- [Xebia](http://blog.xebia.fr/)
 
 ### Divers
 - [sicara.com (datascience)](https://blog.sicara.com/)

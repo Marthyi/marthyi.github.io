@@ -5,7 +5,7 @@ set current_dir=%~dp0
 
 cd AllInBlog
 call npm install
-call ng build --prod 
+call ng build --prod --output-hashing all
 
 cd %current_dir%
 
