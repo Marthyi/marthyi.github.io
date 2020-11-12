@@ -35,7 +35,7 @@ import { routerReducer, StoreRouterConnectingModule } from "@ngrx/router-store";
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([Effects]),
     MarkdownModule.forRoot({ loader: HttpClient }),
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
