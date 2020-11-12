@@ -6,13 +6,16 @@
   box-sizing: border-box;
   justify-content: space-between;
   background-color: lighten($primary, 36%);
-  border-radius: 5px;
+
   $size: 320px;
   width: $size;
   height: $size / 2;
   margin-bottom: 3vw;
   margin-right: 2vw;
-  box-shadow: 1px 1px 1px 1px lighten($primary, 20%);
+  box-shadow:
+              0 2px 1px -1px lighten($primary, 20%),
+              0 1px 1px 0 lighten($primary, 20%),
+              0 1px 3px 0 lighten($primary, 20%);
   transition: 400ms ease-in-out;
 
   &:hover {
