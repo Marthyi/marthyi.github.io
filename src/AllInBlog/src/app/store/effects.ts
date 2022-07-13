@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { Actions, Effect, ofType } from "@ngrx/effects";
+import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { ActionCreator, Creator } from "@ngrx/store";
 import { Observable, of } from "rxjs";
 import { switchMap } from "rxjs/operators";
@@ -11,8 +11,8 @@ import { LoadedPostsModel, StateActions } from "./actions";
 export class Effects {
   constructor(private actions$: Actions, private ps: PostService) {}
 
-  @Effect()
-  $increment = this.onAction(StateActions.Home.loadPosts).pipe(
+  
+  $increment = createEffect(() => this.onAction(StateActions.Home.loadPosts).pipe(
     switchMap((p) =>
       this.ps
         .getPosts()
@@ -26,7 +26,7 @@ export class Effects {
           )
         )
     )
-  );
+  ));
 
   private compareDate(a: PostModel, b: PostModel): number {
     return a.creationDate.valueOf() - b.creationDate.valueOf();

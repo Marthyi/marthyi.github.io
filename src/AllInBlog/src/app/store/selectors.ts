@@ -11,7 +11,6 @@ const createHomeStateSelector = function <T>(
 };
 
 export const selectRouter = createFeatureSelector<
-  IAppState,
   fromRouter.RouterReducerState<any>
 >("router");
 
