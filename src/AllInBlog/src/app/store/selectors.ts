@@ -25,6 +25,8 @@ export const {
   selectUrl, // select the current url
 } = fromRouter.getSelectors(selectRouter);
 
+export const timeParameter = selectQueryParam('time');
+
 export const selectPosts = createHomeStateSelector((p) => p.posts);
 export const selectHomeStateStatus = createHomeStateSelector((p) => p.status);
 

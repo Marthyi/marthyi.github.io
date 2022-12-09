@@ -1,0 +1,15 @@
+@import "common";
+@import "colors";
+
+:host {
+    @extend .full-size;
+
+    $padding-LR: 7vw;
+    .container {
+        width: 100%;
+        min-height: calc(100vh - #{$menu-size});
+        display: flex;
+        justify-content: center;
+        padding-bottom: 50px;
+    }
+}

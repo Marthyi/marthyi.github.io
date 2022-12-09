@@ -23,7 +23,11 @@
     "@ngrx/router-store": "^14.0.2",
     "@ngrx/store": "^14.0.2",
     "@ngrx/store-devtools": "^14.0.2",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
     "ngx-markdown": "^10.1.1",
+    "prettier": "^2.8.1",
     "rxjs": "~6.6.3",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"

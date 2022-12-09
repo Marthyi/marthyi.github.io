@@ -8,12 +8,13 @@ import {  paths } from "src/app/app.routes";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class MenuComponent {
-  title: string = "Marthyi.github.io";
+  title = "Marthyi.github.io";
 
   ROUTES = paths;
 
   links = [
     { name: "Veille Techno", route: paths.Post("2017-12-01-Veille-technologique") },
     { name: "Mes références", route: paths.Post("2020-01-01-References") },
+    { name: "Before week-end", route: paths.TimeCount },
   ];
 }

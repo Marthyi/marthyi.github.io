@@ -2,3 +2,5 @@
 src/AllInBlog/node_modules/
 
 src/AllInBlog/dist/
+
+src/AllInBlog/.angular/

@@ -17,7 +17,9 @@ import { reducers } from "./store/actions";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { EffectsModule } from "@ngrx/effects";
 import { Effects } from "./store/effects";
-import { routerReducer, StoreRouterConnectingModule } from "@ngrx/router-store";
+import { StoreRouterConnectingModule } from "@ngrx/router-store";
+import { TimeCountComponent } from './components/time-count/time-count.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { routerReducer, StoreRouterConnectingModule } from "@ngrx/router-store";
     ArticleComponent,
     HomeComponent,
     PostLinkComponent,
+    TimeCountComponent,
+    BlogComponent,
   ],
   imports: [
     BrowserModule,
