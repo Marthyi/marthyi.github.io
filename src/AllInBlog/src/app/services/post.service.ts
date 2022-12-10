@@ -17,9 +17,7 @@ export class PostService {
 
   getPosts(): Observable<PostModel[]> {
 
-    let response: Observable<PostModel[]>;
-    
-    response= this.httpClient
+    const response = this.httpClient
       .get<PostServiceModel[]>("/assets/api/posts.json")
       .pipe(
         map((p) => p.map(this.mapPostModel))
@@ -29,8 +27,8 @@ export class PostService {
   }
 
   protected mapPostModel(apiModel: PostServiceModel): PostModel {
-    let x: RegExp = /(\d{4}-\d{2}-\d{2})(.*)/;
-    let compile = x.exec(apiModel.title);
+    const x = /(\d{4}-\d{2}-\d{2})(.*)/;
+    const compile = x.exec(apiModel.title);
 
     return <PostModel>{
       title: compile?.[2].replace(/-/gi, " "),

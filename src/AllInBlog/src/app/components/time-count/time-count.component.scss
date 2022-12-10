@@ -1,3 +1,12 @@
 :host {
-  display: block;
+  display: flex;
+  justify-content: center;
+
+  .week-end{
+    text-align: center;
+    font-size: 25px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+  }
+
 }
