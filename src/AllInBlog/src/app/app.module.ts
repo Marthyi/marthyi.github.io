@@ -39,7 +39,7 @@ import { BlogComponent } from './components/blog/blog.component';
     StoreDevtoolsModule.instrument(),
     EffectsModule.forRoot([Effects]),
     MarkdownModule.forRoot({ loader: HttpClient }),
-    RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' }),
+    RouterModule.forRoot(routes, {}),
     StoreRouterConnectingModule.forRoot(),
   ],
   providers: [
