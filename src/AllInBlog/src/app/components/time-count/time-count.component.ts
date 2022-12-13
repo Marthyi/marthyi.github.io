@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/internal/Observable';
 import { timer } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
 import { IAppState } from 'src/app/store/models';
 import { timeParameter } from 'src/app/store/selectors';
-import { mergeMap } from 'rxjs/operators';
+import { mergeMap, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-time-count',
@@ -15,26 +15,55 @@ import { mergeMap } from 'rxjs/operators';
 })
 export class TimeCountComponent {
   parameter$: Observable<string | undefined>;
+
+  nextFriday$: Observable<Date>;
+
   weekendLabel$: Observable<string>;
+  pictureUrl$: Observable<string>;
+
+  weekPicture = 'https://media.giphy.com/media/evB90wPnh5LxG3XU5o/giphy.gif';
+  captainPicture =
+    'https://wompampsupport.azureedge.net/fetchimage?siteId=7575&v=2&jpgQuality=100&width=700&url=https%3A%2F%2Fi.kym-cdn.com%2Fphotos%2Fimages%2Fnewsfeed%2F001%2F414%2F503%2Feac.jpg';
+  weekEndTeamPicture =
+    'https://i.giphy.com/media/xT8qB308txoPb4P9Ze/giphy.webp';
 
   constructor(private store: Store<IAppState>) {
     this.parameter$ = this.store.select(timeParameter);
-    this.weekendLabel$ = this.getWekendLabel();
-  }
 
-  getWekendLabel(): Observable<string> {
-    const x = timer(0, 1000).pipe(
-      mergeMap(_ =>
-        this.parameter$.pipe(
-          map((value: string | undefined) => this.thisIsWeekEnd(value))
-        )
-      )
+    this.nextFriday$ = this.parameter$.pipe(
+      map((value: string | undefined) => this.getParameterNextFriday(value))
     );
 
-    return x;
+    const timerPushWithNextFriday$: Observable<Date> = timer(0, 1000).pipe(
+      switchMap(() => this.nextFriday$)
+    );
+
+    this.weekendLabel$ = timerPushWithNextFriday$.pipe(
+      map((nextFriday: Date) => this.getWeekEndLabel(nextFriday))
+    );
+
+    this.pictureUrl$ = timerPushWithNextFriday$.pipe(
+      map((nextFriday: Date) => this.getPictureUrl(nextFriday))
+    );
   }
 
-  thisIsWeekEnd(value: string | undefined): string {
+  isWeekEnd(currentDate: Date, nextFriday: Date): boolean {
+    if (
+      currentDate.getDay() === Weekday.Saturday ||
+      currentDate.getDay() === Weekday.Sunday ||
+      (currentDate.getDay() === Weekday.Friday &&
+        currentDate.getHours() > nextFriday.getHours()) ||
+      (currentDate.getDay() === Weekday.Friday &&
+        currentDate.getHours() == nextFriday.getHours() &&
+        currentDate.getMinutes() >= nextFriday.getMinutes())
+    ) {
+      return true;
+    }
+
+    return false;
+  }
+
+  getParameterNextFriday(value: string | undefined): Date {
     const defaultTime = '1723';
     const timeFormat = /^(\d{2})(\d{2})$/;
     let time: string = value === undefined ? defaultTime : (value as string);
@@ -44,39 +73,31 @@ export class TimeCountComponent {
 
     const regexResult = timeFormat.exec(time);
 
-    if (regexResult == null) throw '654';
+    if (regexResult == null) throw 'boom';
 
     const timeHours = parseInt(regexResult[1]);
     const timeMinutes = parseInt(regexResult[2]);
 
     const now = new Date(Date.now());
-    //const now = new Date(Date.parse('2022-12-08T18:30:00'));
 
-    const currentDay = now.getDay();
-    const currentHours = now.getHours();
-    const currentMinutes = now.getMinutes();
-
-    if (
-      currentDay === Weekday.Saturday ||
-      currentDay === Weekday.Sunday ||
-      (currentDay === Weekday.Friday && currentHours > timeHours) ||
-      (currentDay === Weekday.Friday &&
-        currentHours == timeHours &&
-        currentMinutes >= timeMinutes)
-    ) {
-      return "C'est le week-end";
-    }
-
-    const t1date = this.getNextFriday(
+    const nextFriday = this.getNextFriday(
       new Date(now.toDateString()),
       timeHours,
       timeMinutes
     );
 
-    const t1 = t1date.getTime();
-    const t2 = now.getTime();
+    return nextFriday;
+  }
 
-    const diff = t1 - t2;
+  getWeekEndLabel(nextFriday: Date): string {
+    //const now = new Date(Date.parse('2022-12-16T18:30:00'));
+    const now = new Date(Date.now());
+
+    if (this.isWeekEnd(now, nextFriday)) {
+      return "C'est le week-end";
+    }
+
+    const diff = nextFriday.getTime() - now.getTime();
 
     console.debug(`diff: ${diff}`);
     // calculer le nombre de jours, d'heures et de minutes
@@ -86,6 +107,21 @@ export class TimeCountComponent {
     const secondes = Math.floor((diff % (1000 * 60)) / 1000);
 
     return `Encore ${days} jour(s) ${hours} heures, ${minutes} minutes et ${secondes} secondes`;
+  }
+
+  getPictureUrl(nextFriday: Date): string {
+    const now = new Date(Date.now());
+    //const now = new Date(Date.parse('2022-12-14T18:30:00'));
+
+    if (this.isWeekEnd(now, nextFriday)) {
+      return this.weekEndTeamPicture;
+    }
+
+    if (now.getDay() === Weekday.Wednesday) {
+      return this.captainPicture;
+    }
+
+    return this.weekPicture;
   }
 
   getNextFriday(date: Date, hours: number, minutes: number): Date {

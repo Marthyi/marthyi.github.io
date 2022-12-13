@@ -1,8 +1,8 @@
 <app-page class="content">  
   <div class="week-end">
-    {{ weekendLabel$ | async }}
+    {{weekendLabel$ | async}}
   </div>
   <div>
-    <img src="https://media.giphy.com/media/evB90wPnh5LxG3XU5o/giphy.gif" />
+    <img src="{{pictureUrl$ | async}}" />
   </div>
 </app-page>
