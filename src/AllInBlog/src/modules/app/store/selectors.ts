@@ -1,12 +1,20 @@
 import * as fromRouter from "@ngrx/router-store";
+import { getSelectors } from "@ngrx/router-store";
 import { createFeatureSelector, createSelector } from "@ngrx/store";
 import { HomeState, IAppState, SelectedPost } from "./models";
 
-const getHome = (state: IAppState) => state.home;
+/*
+* HOME SELECTORS
+*/
+
+const getHome = (state: { app: IAppState }) => {
+  return state.app.home;
+};
 
 const createHomeStateSelector = function <T>(
   selector: (state: HomeState) => T
 ) {
+  //debugger;
   return createSelector(getHome, selector);
 };
 
@@ -22,13 +30,21 @@ export const {
   selectRouteParams, // select the current route params
   selectRouteParam, // factory function to select a route param
   selectRouteData, // select the current route data
+  //selectRouteDataParam, // factory function to select a route data param
   selectUrl, // select the current url
-} = fromRouter.getSelectors(selectRouter);
+  selectTitle, // select the title if available
+} = getSelectors();
 
 export const timeParameter = selectQueryParam('time');
 
-export const selectPosts = createHomeStateSelector((p) => p.posts);
+export const selectPosts = createHomeStateSelector((p) => {
+  return p.posts;
+});
 export const selectHomeStateStatus = createHomeStateSelector((p) => p.status);
+
+/*
+* POST SELECTORS
+*/
 
 const selectedPostId = selectRouteParam("post");
 
@@ -44,6 +60,6 @@ export const selectedPost = createSelector(selectedPostId, (p) => {
     };
   }
 
-return null;
+  return null;
 
 });

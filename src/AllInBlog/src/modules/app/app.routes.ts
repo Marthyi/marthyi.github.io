@@ -23,8 +23,8 @@ export const routes: Routes = [
     children: [
       { path: paths.Home, component: HomeComponent },
       { path: paths.Posts + '/:post', component: ArticleComponent },
-      { path: '**', redirectTo: paths.Blog },
+      { path: '**', redirectTo: paths.Home },
     ],
   },
-  { path: '**', redirectTo: paths.Home },
+  { path: '**', redirectTo: paths.Blog },
 ];

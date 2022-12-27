@@ -3,9 +3,9 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/internal/Observable';
 import { timer } from 'rxjs';
 import { map } from 'rxjs/internal/operators/map';
-import { IAppState } from 'src/app/store/models';
-import { timeParameter } from 'src/app/store/selectors';
-import { mergeMap, switchMap } from 'rxjs/operators';
+import { IAppState } from '@app/store/models';
+import { timeParameter } from '@app/store/selectors';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-time-count',

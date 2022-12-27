@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
-import { PostModel } from "src/app/services/serviceModels/serviceModels";
-import { paths } from 'src/app/app.routes';
+import { PostModel } from "@app/services/serviceModels/serviceModels";
+import { paths } from '@app/app.routes';
 
 @Component({
   selector: "app-post-link",

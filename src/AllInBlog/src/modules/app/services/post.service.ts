@@ -2,7 +2,7 @@ import { Injectable } from "@angular/core";
 import {
   PostModel,
   PostServiceModel,
-} from "src/app/services/serviceModels/serviceModels";
+} from "@app/services/serviceModels/serviceModels";
 import { HttpClient } from "@angular/common/http";
 import { map, catchError, delay } from "rxjs/operators";
 import { Observable } from "rxjs";

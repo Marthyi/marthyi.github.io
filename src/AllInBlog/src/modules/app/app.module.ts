@@ -1,8 +1,6 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { HashLocationStrategy, LocationStrategy } from "@angular/common";
-import { routes } from "./app.routes";
-import { MainComponent } from "./components/main/main.component";
+import { CommonModule} from "@angular/common";
+import { routes } from "@app/app.routes";
 import { RouterModule } from "@angular/router";
 import { MenuComponent } from "./components/menu/menu.component";
 import { PageComponent } from "./components/page/page.component";
@@ -17,13 +15,12 @@ import { reducers } from "./store/actions";
 import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { EffectsModule } from "@ngrx/effects";
 import { Effects } from "./store/effects";
-import { StoreRouterConnectingModule } from "@ngrx/router-store";
 import { TimeCountComponent } from './components/time-count/time-count.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { StoreRouterConnectingModule } from "@ngrx/router-store";
 
 @NgModule({
   declarations: [
-    MainComponent,
     MenuComponent,
     PageComponent,
     ArticleComponent,
@@ -33,19 +30,18 @@ import { BlogComponent } from './components/blog/blog.component';
     BlogComponent,
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
-    StoreModule.forRoot(reducers),    
+    CommonModule,
+    StoreModule.forFeature('app', reducers),
     StoreDevtoolsModule.instrument(),
-    EffectsModule.forRoot([Effects]),
+    StoreRouterConnectingModule,
+    EffectsModule.forFeature([Effects]),
     MarkdownModule.forRoot({ loader: HttpClient }),
-    RouterModule.forRoot(routes, {}),
-    StoreRouterConnectingModule.forRoot(),
+    RouterModule.forChild(routes)
   ],
   providers: [
     PostService,
-    { provide: LocationStrategy, useClass: HashLocationStrategy },
-  ],
-  bootstrap: [MainComponent],
+    //{ provide: LocationStrategy, useClass: HashLocationStrategy },
+  ]
 })
-export class AppModule {}
+export class AppModule { }

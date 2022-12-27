@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
 import { Store } from '@ngrx/store';
 import { Observable } from "rxjs";
-import { PostModel } from "src/app/services/serviceModels/serviceModels";
-import { StateActions } from 'src/app/store/actions';
-import { HomeStateStatus, IAppState } from 'src/app/store/models';
-import { selectHomeStateStatus, selectPosts } from 'src/app/store/selectors';
+import { PostModel } from "@app/services/serviceModels/serviceModels";
+import { StateActions } from '@app/store/actions';
+import { HomeStateStatus, IAppState } from '@app/store/models';
+import { selectHomeStateStatus, selectPosts } from '@app/store/selectors';
 
 
 @Component({
@@ -18,9 +18,9 @@ export class HomeComponent {
   public posts$: Observable<PostModel[]>;
   public status$: Observable<HomeStateStatus>;
 
-  constructor(private store: Store<IAppState>) {
+  constructor(private store: Store<{app:IAppState}>) {
 
-    this.posts$ = this.store.select(selectPosts);
+    this.posts$ = this.store.select(selectPosts);   
     this.status$ = this.store.select(selectHomeStateStatus);     
 
     this.store.dispatch(StateActions.Home.loadPosts());

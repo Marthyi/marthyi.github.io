@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from "@angular/core";
-import {  paths } from "src/app/app.routes";
+import {  paths } from "@app/app.routes";
 
 @Component({
   selector: "app-menu",
